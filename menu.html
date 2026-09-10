@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dreamy Cafe - Menu</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* ================= MENU HEADER ================= */
+
+        .menu-page-header {
+            height: 300px;
+
+            background-image:
+                linear-gradient(
+                    rgba(40, 20, 10, 0.55),
+                    rgba(40, 20, 10, 0.55)
+                ),
+                url("images/cafe.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+
+
+        .menu-header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .menu-header-content h1 {
+            color: white;
+
+            font-size: 55px;
+
+            margin: 0 0 15px 0;
+        }
+
+
+        .menu-header-content p {
+            color: white;
+
+            font-size: 19px;
+
+            margin: 0;
+        }
+
+
+        /* ================= CATEGORY AREA ================= */
+
+        .menu-categories {
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 35px 20px;
+        }
+
+
+        /* ================= CATEGORY BUTTON ================= */
+
+        .menu-category-btn {
+            width: 210px;
+            height: 120px;
+
+            border: none;
+            border-radius: 18px;
+
+            background-size: cover;
+            background-position: center;
+
+            color: white !important;
+
+            font-size: 22px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-shadow:
+                2px 2px 5px black,
+                -1px -1px 3px black;
+
+            box-shadow:
+                0 7px 18px rgba(0, 0, 0, 0.20);
+
+            transition: 0.25s;
+        }
+
+
+        .menu-category-btn span {
+            color: white !important;
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .menu-category-btn:hover {
+            transform: translateY(-5px);
+        }
+
+
+        /* ================= CATEGORY IMAGES ================= */
+
+        .coffee-btn {
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.35),
+                    rgba(0, 0, 0, 0.35)
+                ),
+                url("images/coffee.jpg");
+        }
+
+
+        .cold-btn {
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.35),
+                    rgba(0, 0, 0, 0.35)
+                ),
+                url("images/cold drink.jpg");
+        }
+
+
+        .cakes-btn {
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.35),
+                    rgba(0, 0, 0, 0.35)
+                ),
+                url("images/cakes.jpg");
+        }
+
+
+        .bakery-btn {
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.35),
+                    rgba(0, 0, 0, 0.35)
+                ),
+                url("images/bakery.jpg");
+        }
+
+
+        /* ================= PRODUCTS ================= */
+
+        .my-product-section {
+            display: none !important;
+
+            width: 100%;
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 10px 25px 60px;
+        }
+
+
+        .my-product-section.show {
+            display: block !important;
+        }
+
+
+        .my-product-section h2 {
+            color: #4b2e24;
+
+            font-size: 32px;
+
+            margin: 0 0 25px 0;
+        }
+
+
+        /* ================= PRODUCT GRID ================= */
+
+        .my-product-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* ================= PRODUCT CARD ================= */
+
+        .my-product-card {
+            background: white;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 6px 20px rgba(0, 0, 0, 0.12);
+
+            transition: 0.25s;
+        }
+
+
+        .my-product-card:hover {
+            transform: translateY(-5px);
+        }
+
+
+        .my-product-card img {
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        .my-product-info {
+            text-align: center;
+
+            padding: 18px;
+        }
+
+
+        .my-product-info h3 {
+            color: #4b2e24;
+
+            font-size: 21px;
+
+            margin: 0 0 8px 0;
+        }
+
+
+        .my-product-info p {
+            color: #8b4a2f;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            margin: 0;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        .menu-footer {
+            background: #4b2e24;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 20px;
+
+            margin-top: 20px;
+        }
+
+
+        .menu-footer p {
+            margin: 6px 0;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .menu-categories {
+                flex-wrap: wrap;
+            }
+
+
+            .my-product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .menu-page-header {
+                height: 250px;
+
+                padding: 20px;
+            }
+
+
+            .menu-header-content h1 {
+                font-size: 40px;
+            }
+
+
+            .menu-header-content p {
+                font-size: 16px;
+            }
+
+
+            .menu-categories {
+                gap: 15px;
+
+                padding: 25px 15px;
+            }
+
+
+            .menu-category-btn {
+                width: 160px;
+                height: 100px;
+
+                font-size: 19px;
+            }
+
+
+            .my-product-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            Dreamy Cafe
+        </div>
+
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+
+            <li>
+                <a href="index.html#about">
+                    About
+                </a>
+            </li>
+
+
+            <li>
+                <a href="menu.html">
+                    Menu
+                </a>
+            </li>
+
+
+            <li>
+                <a href="index.html#contact">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================= MENU HEADER ================= -->
+
+    <section class="menu-page-header">
+
+        <div class="menu-header-content">
+
+            <h1>
+                Our Menu
+            </h1>
+
+
+            <p>
+                Fresh coffee, refreshing drinks, delicious cakes and bakery treats. 
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORY BUTTONS ================= -->
+
+    <div class="menu-categories">
+
+
+        <button
+            class="menu-category-btn coffee-btn"
+            onclick="showMenuCategory('coffee')">
+
+            <span>
+                Coffee
+            </span>
+
+        </button>
+
+
+        <button
+            class="menu-category-btn cold-btn"
+            onclick="showMenuCategory('coldDrinks')">
+
+            <span>
+                Cold Drinks
+            </span>
+
+        </button>
+
+
+        <button
+            class="menu-category-btn cakes-btn"
+            onclick="showMenuCategory('cakes')">
+
+            <span>
+                Cakes
+            </span>
+
+        </button>
+
+
+        <button
+            class="menu-category-btn bakery-btn"
+            onclick="showMenuCategory('bakery')">
+
+            <span>
+                Bakery
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- ================= COFFEE ================= -->
+
+    <section
+        class="my-product-section"
+        id="coffee">
+
+        <h2>
+            Coffee
+        </h2>
+
+
+        <div class="my-product-grid">
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/expresso.jpg"
+                    alt="Espresso">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Espresso
+                    </h3>
+
+                    <p>
+                        Rs. 300
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/americano.jpg"
+                    alt="Americano">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Americano
+                    </h3>
+
+                    <p>
+                        Rs. 350
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/cappuccino.jpg"
+                    alt="Cappuccino">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Cappuccino
+                    </h3>
+
+                    <p>
+                        Rs. 450
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/latte.jpg"
+                    alt="Latte">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Latte
+                    </h3>
+
+                    <p>
+                        Rs. 450
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/mocha.jpg"
+                    alt="Mocha">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Mocha
+                    </h3>
+
+                    <p>
+                        Rs. 500
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/caramel macchiato.jpg"
+                    alt="Caramel Macchiato">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Caramel Macchiato
+                    </h3>
+
+                    <p>
+                        Rs. 550
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= COLD DRINKS ================= -->
+
+    <section
+        class="my-product-section"
+        id="coldDrinks">
+
+        <h2>
+            Cold Drinks
+        </h2>
+
+
+        <div class="my-product-grid">
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/iced coffee.jpg"
+                    alt="Iced Coffee">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Iced Coffee
+                    </h3>
+
+                    <p>
+                        Rs. 400
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/iced latte.jpg"
+                    alt="Iced Latte">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Iced Latte
+                    </h3>
+
+                    <p>
+                        Rs. 450
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/Cold Chocolate.jpg"
+                    alt="Cold Chocolate">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Cold Chocolate
+                    </h3>
+
+                    <p>
+                        Rs. 450
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/Chocolate Shake.jpg"
+                    alt="Chocolate Shake">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Chocolate Shake
+                    </h3>
+
+                    <p>
+                        Rs. 500
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/Vanilla Shake.jpg"
+                    alt="Vanilla Shake">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Vanilla Shake
+                    </h3>
+
+                    <p>
+                        Rs. 450
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CAKES ================= -->
+
+    <section
+        class="my-product-section"
+        id="cakes">
+
+        <h2>
+            Cakes
+        </h2>
+
+
+        <div class="my-product-grid">
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/Chocolate Cake.jpg"
+                    alt="Chocolate Cake">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Chocolate Cake
+                    </h3>
+
+                    <p>
+                        Rs. 500
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/Red Velvet Cake.jpg"
+                    alt="Red Velvet Cake">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Red Velvet Cake
+                    </h3>
+
+                    <p>
+                        Rs. 550
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/Cheesecake.jpg"
+                    alt="Cheesecake">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Cheesecake
+                    </h3>
+
+                    <p>
+                        Rs. 600
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/Brownie.jpg"
+                    alt="Brownie">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Brownie
+                    </h3>
+
+                    <p>
+                        Rs. 350
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/Chocolate Cupcake.jpg"
+                    alt="Chocolate Cupcake">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Chocolate Cupcake
+                    </h3>
+
+                    <p>
+                        Rs. 250
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BAKERY ================= -->
+
+    <section
+        class="my-product-section"
+        id="bakery">
+
+        <h2>
+            Bakery
+        </h2>
+
+
+        <div class="my-product-grid">
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/Fresh Croissant.jpg"
+                    alt="Fresh Croissant">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Fresh Croissant
+                    </h3>
+
+                    <p>
+                        Rs. 300
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/Chocolate Croissant.jpg"
+                    alt="Chocolate Croissant">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Chocolate Croissant
+                    </h3>
+
+                    <p>
+                        Rs. 350
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/Cinnamon Roll.jpg"
+                    alt="Cinnamon Roll">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Cinnamon Roll
+                    </h3>
+
+                    <p>
+                        Rs. 300
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/Donut.jpg"
+                    alt="Donut">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Donut
+                    </h3>
+
+                    <p>
+                        Rs. 200
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-product-card">
+
+                <img
+                    src="images/Cookies.jpg"
+                    alt="Cookies">
+
+                <div class="my-product-info">
+
+                    <h3>
+                        Cookies
+                    </h3>
+
+                    <p>
+                        Rs. 180
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="menu-footer">
+
+        <p>
+            Designed & Developed by UM E ROMMAN
+        </p>
+
+    </footer>
+
+
+    <!-- ================= CATEGORY JAVASCRIPT ================= -->
+
+    <script>
+
+        function showMenuCategory(categoryId) {
+
+            const sections =
+                document.querySelectorAll(".my-product-section");
+
+
+            /* Hide ALL products first */
+
+            sections.forEach(function(section) {
+
+                section.classList.remove("show");
+
+            });
+
+
+            /* Show ONLY clicked category */
+
+            const selected =
+                document.getElementById(categoryId);
+
+
+            if (selected) {
+
+                selected.classList.add("show");
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
